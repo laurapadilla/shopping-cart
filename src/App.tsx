@@ -1,9 +1,21 @@
-import { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { Container } from 'react-bootstrap';
+import { Home, Store, About } from './pages';
+import { Navbar } from './components';
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  return <h1>Hi</h1>;
+  return (
+    <>
+      <Navbar />
+      <Container className='mb-4'>
+        <Routes>
+          <Route path='/' element={<Home />}></Route>
+          <Route path='/store' element={<Store />}></Route>
+          <Route path='/about' element={<About />}></Route>
+        </Routes>
+      </Container>
+    </>
+  );
 }
 
 export default App;
